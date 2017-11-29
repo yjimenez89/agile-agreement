@@ -13,7 +13,7 @@ namespace Amsystem.Data.SqlServer.Context
     {
         public AmsystemDbContext() : base("AmsystemDbConnection")
         {
-            
+            Database.SetInitializer(new AmsystemDbInitializer());
         }
 
         public DbSet<Agreement> Agreements { get; set; }
