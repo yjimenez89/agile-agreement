@@ -2,26 +2,16 @@
 @model IEnumerable<Agreement>
 
 @{
-    ViewBag.Title = "Agreements";
+    ViewBag.Title = "Amsystem";
 }
 
-<h2>Agreements</h2>
 
-<table class="table">
-
-    @foreach (var agreement in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(agreementItem => agreement.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(agreementItem => agreement.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(agreementItem => agreement.Observation)
-            </td>
-        </tr>
-    }
-
-</table>
+<div class="thumbnail">
+    <img src="~/Images/agreement.jpg" alt="" class="img-thumbnail" style=" padding: 0em; margin: 2em;">
+    <div class="caption">
+        <p style="text-justify: inter-ideograph; text-align: justify">
+            This system is designed to support the work done in the departments. Its main objective is to manage the agreements that are taken in the departmental meetings,
+            in order to increase the compliance rate.
+        </p>
+    </div>
+</div>
