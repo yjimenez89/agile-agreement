@@ -19,8 +19,7 @@ namespace Amsystem.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var agreements = _unitOfWork.Repository<Agreement>().GetAll();
-            return View(agreements);
+            return View();
         }
     }
 }

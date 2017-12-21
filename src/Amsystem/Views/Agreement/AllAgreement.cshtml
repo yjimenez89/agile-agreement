@@ -7,22 +7,34 @@
 
 <h2>Agreements</h2>
 
-<table class="table">
+<p>@Html.ActionLink("Create new", "AddAgreement", "Agreement", null, new { @class = "btn btn-success" })</p>
+<br />
 
-    @foreach (var agreement in Model)
-    {
+<table class="table table-bordered table-striped table-hover">
+
+    <thead>
         <tr>
-            <td>
-                @Html.DisplayFor(agreementItem => agreement.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(agreementItem => agreement.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(agreementItem => agreement.Observation)
-            </td>
+            <td>Description</td>
+            <td>Observation</td>
+            <td>Due Date</td>
         </tr>
-    }
+    </thead>
+
+    <tbody>
+        @foreach (var agreement in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(agreementItem => agreement.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(agreementItem => agreement.Observation)
+                </td>
+                <td>
+                    @Html.DisplayFor(agreementItem => agreement.DueDate)
+                </td>
+            </tr>
+        }
+    </tbody>
 
 </table>
-

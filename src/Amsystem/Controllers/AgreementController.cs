@@ -17,11 +17,27 @@ namespace Amsystem.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        // GET: Agreement
+        // GET: AllAgreements
         public ActionResult AllAgreement()
         {
             var agreements = _unitOfWork.Repository<Agreement>().GetAll();
             return View(agreements);
+        }
+
+        public ActionResult AddAgreement()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddAgreement(Agreement agreement)
+        {
+            if (ModelState.IsValid)
+            {
+                _unitOfWork.Repository<Agreement>().Add(agreement);
+                _unitOfWork.SaveChanges();
+            }
+            return View();
         }
     }
 }
