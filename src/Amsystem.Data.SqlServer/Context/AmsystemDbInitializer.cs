@@ -31,7 +31,8 @@ namespace Amsystem.Data.SqlServer.Context
             {
                 new Status { Name = "Accomplished" },
                 new Status { Name = "Overdue" },
-                new Status { Name = "Approved" }
+                new Status { Name = "Approved" },
+                new Status { Name = "Discussion" }
             };
 
             statuses.ForEach(status => context.Statuses.Add(status));

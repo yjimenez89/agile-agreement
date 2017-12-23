@@ -34,6 +34,16 @@ namespace Amsystem.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (agreement.DueDate > DateTime.Now)
+                {
+                    Status status = _unitOfWork.Repository<Status>().Get(x => x.Name == "Discussion");
+                    agreement.Status = status;
+                }
+                else 
+                {
+                    Status status = _unitOfWork.Repository<Status>().Get(x => x.Name == "Overdue");
+                    agreement.Status = status;
+                }
                 _unitOfWork.Repository<Agreement>().Add(agreement);
                 _unitOfWork.SaveChanges();
             }
