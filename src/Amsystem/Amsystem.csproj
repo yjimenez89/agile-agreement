@@ -168,6 +168,10 @@
       <Project>{B4F169B2-6425-4AD0-8B3D-5C260110BA3F}</Project>
       <Name>Amsystem.Persistense</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Amsystem.Services\Amsystem.Services.csproj">
+      <Project>{361718dd-eafe-41f2-ad59-e95855d7f7af}</Project>
+      <Name>Amsystem.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

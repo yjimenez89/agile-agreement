@@ -5,22 +5,23 @@ using System.Web;
 using System.Web.Mvc;
 using Amsystem.Data.Entities;
 using Amsystem.Persistense;
+using Amsystem.Services;
 
 namespace Amsystem.Controllers
 {
     public class AgreementController : Controller
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IService<Agreement> _agreementService;
 
-        public AgreementController(IUnitOfWork unitOfWork)
+        public AgreementController(IService<Agreement> agreementService)
         {
-            _unitOfWork = unitOfWork;
+            _agreementService = agreementService;
         }
 
         // GET: AllAgreements
         public ActionResult AllAgreement()
         {
-            var agreements = _unitOfWork.Repository<Agreement>().GetAll();
+            var agreements = _agreementService.GetAll();
             return View(agreements);
         }
 
@@ -34,18 +35,7 @@ namespace Amsystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (agreement.DueDate > DateTime.Now)
-                {
-                    Status status = _unitOfWork.Repository<Status>().Get(x => x.Name == "Discussion");
-                    agreement.Status = status;
-                }
-                else 
-                {
-                    Status status = _unitOfWork.Repository<Status>().Get(x => x.Name == "Overdue");
-                    agreement.Status = status;
-                }
-                _unitOfWork.Repository<Agreement>().Add(agreement);
-                _unitOfWork.SaveChanges();
+               _agreementService.Create(agreement);
             }
             return View();
         }
