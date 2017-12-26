@@ -152,6 +152,9 @@
     <Content Include="Views\Agreement\AllAgreement.cshtml" />
     <Content Include="Views\Agreement\AddAgreement.cshtml" />
     <Content Include="Views\Agreement\DisplayTemplates\DateTime.cshtml" />
+    <Content Include="Views\Agreement\EditAgreement.cshtml" />
+    <Content Include="Views\Agreement\EditorTemplates\Agreement.cshtml" />
+    <Content Include="Views\Agreement\EditorTemplates\DateTime.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
