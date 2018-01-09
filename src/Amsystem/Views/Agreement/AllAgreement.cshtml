@@ -17,7 +17,8 @@
         <tr>
             <th>Description</th>
             <th>Observation</th>
-            <th>Observation</th>
+            <th>Due Date</th>
+            <th>Actions</th>
         </tr>
     </thead>
 
@@ -35,7 +36,7 @@
                     @Html.DisplayFor(agreementItem => agreement.DueDate)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "EditAgreement", new { id = agreement.Id })
+                    <a href="@Url.Action("EditAgreement", "Agreement", new { id = agreement.Id } )" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                 </td>
             </tr>
         }
