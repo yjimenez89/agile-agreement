@@ -36,7 +36,7 @@
                     @Html.DisplayFor(agreementItem => agreement.DueDate)
                 </td>
                 <td>
-                    <a href="@Url.Action("EditAgreement", "Agreement", new { id = agreement.Id } )" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                    <a href="@Url.Action("EditAgreement", "Agreement", new { id = agreement.Id } )" data-toggle="tooltip" title="Edit agreement" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                 </td>
             </tr>
         }
